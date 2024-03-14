@@ -4,9 +4,15 @@
   "description": "An example Node.js project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "serverless offline --aws-profile alm-shopify-pos",
+    "lint": "eslint --cache src --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier-format": "prettier --config .prettierrc src//.ts --write",
+    "prepare": "husky install"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "node",
     "example",
