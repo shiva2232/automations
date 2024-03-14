@@ -50,6 +50,7 @@ int installDeps(){
     }
     fputs(prettier_config, config_file);
     fclose(config_file);
+    sleep(1);
     printf(".prettierrc file added\n");
 
     printf("creating packages directory in current path\n");
@@ -142,11 +143,10 @@ int addWorkspace(){
         fclose(file);
 
         printf("The 'workspaces' section does not exist in package.json. Proceeding with insertion.\n");
-    }
-    else
-    {
+    }else{
         printf("The 'workspaces' section already exists in package.json. No modifications needed.\n");
     }
+    sleep(1);
     return 0;
 }
 
@@ -193,6 +193,7 @@ int updateScripts(){
 
     // Close the file
     fclose(file);
+    sleep(1);
 
     // Open the file for writing
     file = fopen("package.json", "w");
