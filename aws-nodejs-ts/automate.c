@@ -214,7 +214,7 @@ int updateScripts(){
 
 int configEslint(){
     printf("Eslint configuration started...");
-    system("eslint --init");
+    system("npm init @eslint/config");
     printf("Eslint configured successfully...");
     return 0;
 }
